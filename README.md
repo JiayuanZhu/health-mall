@@ -36,26 +36,32 @@
 
 ## 快速开始
 
-### 前置条件
+### 方式一：打包发布（推荐给非开发人员）
 
-- Node.js >= 18
-
-### 安装
+使用打包脚本生成"解压即用"的完整包（自带 Node.js，无需安装任何东西）：
 
 ```bash
-# 安装根目录依赖（concurrently）
-npm install
+# 打包 Linux 版
+./build-scripts/build-linux.sh
 
-# 安装前端依赖
-cd client && npm install && cd ..
-
-# 安装后端依赖
-cd server && npm install && cd ..
+# 打包 Windows 版
+./build-scripts/build-windows.sh
 ```
 
-### 启动开发服务
+打包产出：
+- `health-mall-linux-x64.tar.gz` — Linux 用户解压后运行 `./start.sh`
+- `health-mall-windows-x64.zip` — Windows 用户解压后双击 `start.bat`
+
+### 方式二：开发者本地运行
+
+前置条件：Node.js >= 18
 
 ```bash
+# 安装依赖
+npm install
+cd client && npm install && cd ..
+cd server && npm install && cd ..
+
 # 同时启动前后端
 npm run dev
 ```
@@ -70,10 +76,15 @@ npm run dev
 | 管理员 | admin | admin123 |
 | 普通用户 | user1 | 123456 |
 
+管理后台: http://localhost:5173/admin
+
 ## 项目结构
 
 ```
 health-mall/
+├── build-scripts/          # 打包脚本
+│   ├── build-linux.sh      # 打包 Linux 解压即用版
+│   └── build-windows.sh    # 打包 Windows 解压即用版
 ├── client/                 # 前端 (Vite + React)
 │   ├── public/images/      # 静态图片资源
 │   ├── src/
@@ -125,6 +136,7 @@ health-mall/
 - 数据库文件 `server/health-mall.db` 首次启动时自动创建并填充示例数据
 - 前端开发服务通过 Vite proxy 将 `/api` 请求代理到后端 3001 端口
 - 图片资源存放在 `client/public/images/`
+- 打包脚本使用 Node.js v20 LTS + better-sqlite3 prebuilt binary，确保跨平台兼容
 
 ## License
 
