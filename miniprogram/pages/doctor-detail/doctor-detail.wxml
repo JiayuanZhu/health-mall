@@ -1,0 +1,94 @@
+<view class="doctor-detail-page">
+  <!-- 医生信息 -->
+  <view class="doctor-header" wx:if="{{doctor}}">
+    <view class="doctor-header-bg"></view>
+    <view class="doctor-card-main">
+      <view class="doctor-avatar-large">
+        <text>{{doctor.name ? doctor.name[0] : '医'}}</text>
+      </view>
+      <view class="doctor-main-info">
+        <text class="doctor-name">{{doctor.name}}</text>
+        <text class="doctor-title-badge">{{doctor.title || '主治医师'}}</text>
+        <text class="doctor-dept">{{doctor.department_name || ''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 医生详情 -->
+  <view class="detail-section" wx:if="{{doctor}}">
+    <view class="detail-card" wx:if="{{doctor.specialty}}">
+      <text class="detail-label">🎯 擅长领域</text>
+      <text class="detail-content">{{doctor.specialty}}</text>
+    </view>
+    <view class="detail-card" wx:if="{{doctor.description}}">
+      <text class="detail-label">📋 医生简介</text>
+      <text class="detail-content">{{doctor.description}}</text>
+    </view>
+  </view>
+
+  <!-- 预约按钮 -->
+  <view class="book-section" wx:if="{{doctor && !showBookForm}}">
+    <view class="book-btn-large" bindtap="toggleBookForm">
+      <text>📅 立即预约挂号</text>
+    </view>
+  </view>
+
+  <!-- 预约表单 -->
+  <view class="booking-form" wx:if="{{showBookForm}}">
+    <view class="form-header">
+      <text class="form-title">📅 预约挂号</text>
+      <text class="form-close" bindtap="toggleBookForm">收起</text>
+    </view>
+
+    <!-- 选择日期 -->
+    <view class="form-group">
+      <text class="form-label">预约日期</text>
+      <picker mode="date" value="{{appointmentDate}}" start="{{minDate}}" bindchange="onDateChange">
+        <view class="form-picker {{appointmentDate ? '' : 'placeholder'}}">
+          <text>{{appointmentDate || '请选择日期'}}</text>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 选择时段 -->
+    <view class="form-group">
+      <text class="form-label">预约时段</text>
+      <view class="time-slots">
+        <view class="time-slot {{timeSlot === item ? 'active' : ''}}" wx:for="{{timeSlots}}" wx:key="*this" bindtap="onTimeSlotTap" data-slot="{{item}}">
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 患者姓名 -->
+    <view class="form-group">
+      <text class="form-label">患者姓名</text>
+      <input class="form-input" placeholder="请输入患者姓名" value="{{patientName}}" bindinput="onPatientNameInput" />
+    </view>
+
+    <!-- 联系电话 -->
+    <view class="form-group">
+      <text class="form-label">联系电话</text>
+      <input class="form-input" placeholder="请输入联系电话" type="number" value="{{patientPhone}}" bindinput="onPatientPhoneInput" />
+    </view>
+
+    <!-- 症状描述 -->
+    <view class="form-group">
+      <text class="form-label">症状描述（选填）</text>
+      <textarea class="form-textarea" placeholder="请描述您的症状" value="{{symptoms}}" bindinput="onSymptomsInput" maxlength="500" />
+    </view>
+
+    <!-- 提交 -->
+    <view class="form-submit">
+      <view class="submit-btn {{submitting ? 'disabled' : ''}}" bindtap="onSubmitAppointment">
+        <text>{{submitting ? '提交中...' : '确认预约'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>

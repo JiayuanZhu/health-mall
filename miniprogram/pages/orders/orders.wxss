@@ -1,0 +1,158 @@
+.orders-page {
+  padding: 0 24rpx 24rpx;
+  min-height: 100vh;
+}
+
+.page-header {
+  padding: 24rpx 0;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+/* 订单列表 */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.order-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.order-no {
+  font-size: 24rpx;
+  color: #6b7280;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6rpx 16rpx;
+  border-radius: 16rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+}
+
+.badge-pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-confirmed {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.badge-completed {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge-cancelled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* 订单商品 */
+.order-items {
+  margin-bottom: 16rpx;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0;
+}
+
+.order-item-image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  background: #f3f4f6;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.order-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-item-name {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.order-item-qty {
+  font-size: 22rpx;
+  color: #9ca3af;
+}
+
+.order-item-price {
+  font-size: 26rpx;
+  color: #ef4444;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* 订单底部 */
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f5f5f5;
+}
+
+.order-total {
+  font-size: 28rpx;
+  color: #1a1a1a;
+  font-weight: 600;
+  display: block;
+}
+
+.order-date {
+  font-size: 22rpx;
+  color: #9ca3af;
+  display: block;
+  margin-top: 4rpx;
+}
+
+.cancel-btn {
+  padding: 12rpx 28rpx;
+  border: 2rpx solid #ef4444;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #ef4444;
+}
+
+/* 空状态按钮 */
+.empty-btn {
+  margin-top: 24rpx;
+  padding: 16rpx 48rpx;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #ffffff;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  display: inline-block;
+}

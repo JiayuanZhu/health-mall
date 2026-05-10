@@ -1,0 +1,236 @@
+.doctor-detail-page {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+/* 医生头部 */
+.doctor-header {
+  position: relative;
+}
+
+.doctor-header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240rpx;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+.doctor-card-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 100rpx 24rpx 0;
+  padding: 30rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+}
+
+.doctor-avatar-large {
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+  border: 6rpx solid #ffffff;
+  box-shadow: 0 4rpx 16rpx rgba(14, 165, 233, 0.3);
+}
+
+.doctor-main-info {
+  flex: 1;
+}
+
+.doctor-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.doctor-title-badge {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #0ea5e9;
+  background: #e0f2fe;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  margin-bottom: 8rpx;
+}
+
+.doctor-dept {
+  font-size: 26rpx;
+  color: #6b7280;
+  display: block;
+}
+
+/* 详情区域 */
+.detail-section {
+  padding: 20rpx 24rpx;
+}
+
+.detail-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.detail-label {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.detail-content {
+  font-size: 26rpx;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+/* 预约按钮 */
+.book-section {
+  padding: 20rpx 24rpx;
+}
+
+.book-btn-large {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #ffffff;
+  text-align: center;
+  padding: 28rpx;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 20rpx rgba(16, 185, 129, 0.3);
+}
+
+/* 预约表单 */
+.booking-form {
+  margin: 0 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+
+.form-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.form-close {
+  font-size: 26rpx;
+  color: #0ea5e9;
+}
+
+.form-group {
+  margin-bottom: 28rpx;
+}
+
+.form-label {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #374151;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.form-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border: 2rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: #1a1a1a;
+}
+
+.form-picker.placeholder {
+  color: #9ca3af;
+}
+
+.picker-arrow {
+  font-size: 32rpx;
+  color: #9ca3af;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.time-slot {
+  padding: 14rpx 24rpx;
+  background: #f3f4f6;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #4b5563;
+  border: 2rpx solid transparent;
+}
+
+.time-slot.active {
+  background: #e0f2fe;
+  color: #0ea5e9;
+  border-color: #0ea5e9;
+  font-weight: 500;
+}
+
+.form-input {
+  background: #f8f9fa;
+  border: 2rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+}
+
+.form-textarea {
+  width: 100%;
+  background: #f8f9fa;
+  border: 2rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  margin-top: 20rpx;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #ffffff;
+  text-align: center;
+  padding: 24rpx;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.submit-btn.disabled {
+  opacity: 0.6;
+}

@@ -1,0 +1,291 @@
+.home-page {
+  padding-bottom: 20rpx;
+}
+
+/* 搜索栏 */
+.home-search {
+  padding: 20rpx 24rpx;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+.home-search .search-bar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 40rpx;
+  padding: 18rpx 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-placeholder {
+  color: #9ca3af;
+  font-size: 28rpx;
+  margin-left: 8rpx;
+}
+
+/* 轮播图 */
+.banner-section {
+  padding: 0 24rpx;
+  margin-top: 20rpx;
+}
+
+.banner-swiper {
+  height: 300rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+}
+
+.banner-placeholder {
+  height: 300rpx;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-placeholder-icon {
+  font-size: 80rpx;
+  margin-bottom: 16rpx;
+}
+
+.banner-placeholder-text {
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* 服务功能 */
+.services-section {
+  padding: 30rpx 24rpx;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: space-around;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx 10rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.service-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  border-radius: 50%;
+  margin-bottom: 12rpx;
+}
+
+.service-icon {
+  font-size: 40rpx;
+}
+
+.service-name {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4rpx;
+}
+
+.service-desc {
+  font-size: 20rpx;
+  color: #9ca3af;
+}
+
+/* 段落 */
+.section {
+  padding: 0 24rpx;
+  margin-top: 10rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.section-more {
+  font-size: 24rpx;
+  color: #0ea5e9;
+}
+
+/* 分类网格 */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 20rpx 10rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.category-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.category-icon-wrap {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+}
+
+.category-icon {
+  font-size: 36rpx;
+}
+
+.category-name {
+  font-size: 24rpx;
+  color: #374151;
+}
+
+/* 热门药品 */
+.hot-products-scroll {
+  white-space: nowrap;
+}
+
+.hot-products-list {
+  display: inline-flex;
+  padding-bottom: 10rpx;
+}
+
+.hot-product-card {
+  width: 260rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hot-product-image {
+  width: 260rpx;
+  height: 200rpx;
+  background: #f3f4f6;
+}
+
+.hot-product-info {
+  padding: 16rpx;
+  white-space: normal;
+}
+
+.hot-product-name {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #1a1a1a;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  margin-bottom: 4rpx;
+}
+
+.hot-product-spec {
+  font-size: 22rpx;
+  color: #9ca3af;
+  margin-bottom: 8rpx;
+}
+
+.hot-product-price {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.hot-product-price .price-symbol {
+  font-size: 22rpx;
+}
+
+.hot-product-price .price-value {
+  font-size: 32rpx;
+}
+
+/* 热门科室 */
+.dept-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.dept-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.dept-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-radius: 16rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.dept-icon {
+  font-size: 40rpx;
+}
+
+.dept-info {
+  flex: 1;
+}
+
+.dept-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4rpx;
+  display: block;
+}
+
+.dept-desc {
+  font-size: 24rpx;
+  color: #9ca3af;
+  display: block;
+}
+
+.dept-arrow {
+  font-size: 36rpx;
+  color: #d1d5db;
+}

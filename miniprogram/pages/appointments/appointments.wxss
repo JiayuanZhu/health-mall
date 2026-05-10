@@ -1,0 +1,162 @@
+.appointments-page {
+  padding: 0 24rpx 24rpx;
+  min-height: 100vh;
+}
+
+.page-header {
+  padding: 24rpx 0;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+/* 预约列表 */
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.appointment-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16rpx;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6rpx 16rpx;
+  border-radius: 16rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+}
+
+.badge-pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-confirmed {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.badge-completed {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge-cancelled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* 医生信息 */
+.appointment-doctor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.doctor-avatar-sm {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.doctor-info-sm {
+  flex: 1;
+}
+
+.doctor-name-sm {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+}
+
+.doctor-dept-sm {
+  font-size: 24rpx;
+  color: #6b7280;
+  display: block;
+}
+
+/* 预约详情 */
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  font-size: 26rpx;
+  margin-right: 12rpx;
+  width: 36rpx;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  font-size: 26rpx;
+  color: #4b5563;
+  flex: 1;
+}
+
+.detail-text.symptoms {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 底部操作 */
+.appointment-footer {
+  margin-top: 20rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f5f5f5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel-btn {
+  padding: 12rpx 28rpx;
+  border: 2rpx solid #ef4444;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #ef4444;
+}
+
+/* 空状态按钮 */
+.empty-btn {
+  margin-top: 24rpx;
+  padding: 16rpx 48rpx;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #ffffff;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  display: inline-block;
+}

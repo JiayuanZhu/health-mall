@@ -1,0 +1,73 @@
+<view class="product-detail-page" wx:if="{{product}}">
+  <!-- 商品图片 -->
+  <view class="product-image-section">
+    <image class="product-main-image" src="{{product.image_url}}" mode="aspectFill" />
+  </view>
+
+  <!-- 价格信息 -->
+  <view class="product-price-section">
+    <view class="price-row">
+      <text class="price-label">价格</text>
+      <view class="price-display">
+        <text class="price-symbol">¥</text>
+        <text class="price-value">{{product.price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="product-info-section">
+    <text class="product-name">{{product.name}}</text>
+    <view class="product-tags">
+      <view class="tag" wx:if="{{product.is_hot}}">🔥 热门</view>
+      <view class="tag new" wx:if="{{product.is_new}}">✨ 新品</view>
+    </view>
+    <view class="info-row" wx:if="{{product.specification}}">
+      <text class="info-label">规格</text>
+      <text class="info-value">{{product.specification}}</text>
+    </view>
+    <view class="info-row" wx:if="{{product.manufacturer}}">
+      <text class="info-label">厂家</text>
+      <text class="info-value">{{product.manufacturer}}</text>
+    </view>
+    <view class="info-row" wx:if="{{product.category_name}}">
+      <text class="info-label">分类</text>
+      <text class="info-value">{{product.category_name}}</text>
+    </view>
+  </view>
+
+  <!-- 商品描述 -->
+  <view class="product-desc-section" wx:if="{{product.description}}">
+    <text class="section-title">商品说明</text>
+    <text class="product-description">{{product.description}}</text>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="quantity-section">
+      <text class="quantity-label">数量</text>
+      <view class="quantity-control">
+        <view class="qty-btn minus {{quantity <= 1 ? 'disabled' : ''}}" bindtap="onQuantityMinus">
+          <text>-</text>
+        </view>
+        <text class="qty-value">{{quantity}}</text>
+        <view class="qty-btn plus" bindtap="onQuantityPlus">
+          <text>+</text>
+        </view>
+      </view>
+    </view>
+    <view class="action-btns">
+      <view class="btn-cart" bindtap="goToCart">
+        <text>🛒</text>
+      </view>
+      <view class="btn-add" bindtap="onAddToCart">
+        <text>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 加载中 -->
+<view class="loading-state" wx:if="{{loading}}">
+  <text>加载中...</text>
+</view>

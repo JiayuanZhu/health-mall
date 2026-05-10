@@ -1,0 +1,37 @@
+<view class="login-page">
+  <!-- Logo区域 -->
+  <view class="logo-section">
+    <view class="logo-icon">
+      <text>🏥</text>
+    </view>
+    <text class="logo-title">健康商城</text>
+    <text class="logo-subtitle">您的健康管家</text>
+  </view>
+
+  <!-- 登录表单 -->
+  <view class="form-section">
+    <view class="form-card">
+      <view class="form-group">
+        <view class="input-wrap">
+          <text class="input-icon">👤</text>
+          <input class="form-input" placeholder="请输入用户名" value="{{username}}" bindinput="onUsernameInput" />
+        </view>
+      </view>
+      <view class="form-group">
+        <view class="input-wrap">
+          <text class="input-icon">🔒</text>
+          <input class="form-input" placeholder="请输入密码" password="{{true}}" value="{{password}}" bindinput="onPasswordInput" bindconfirm="onLogin" />
+        </view>
+      </view>
+
+      <view class="login-btn {{loading ? 'disabled' : ''}}" bindtap="onLogin">
+        <text>{{loading ? '登录中...' : '登录'}}</text>
+      </view>
+
+      <view class="register-link" bindtap="goToRegister">
+        <text>还没有账号？</text>
+        <text class="link-text">立即注册</text>
+      </view>
+    </view>
+  </view>
+</view>

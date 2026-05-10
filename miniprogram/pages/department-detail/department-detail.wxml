@@ -1,0 +1,49 @@
+<view class="dept-detail-page">
+  <!-- 科室信息头部 -->
+  <view class="dept-header" wx:if="{{department}}">
+    <view class="dept-header-bg"></view>
+    <view class="dept-header-content">
+      <view class="dept-icon-large">
+        <text>{{department.icon || '🏥'}}</text>
+      </view>
+      <text class="dept-title">{{department.name}}</text>
+      <text class="dept-description">{{department.description || '专业医疗团队为您提供优质服务'}}</text>
+    </view>
+  </view>
+
+  <!-- 医生列表 -->
+  <view class="doctors-section" wx:if="{{doctors.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">👨‍⚕️ 科室医生</text>
+      <text class="doctor-count">共{{doctors.length}}位医生</text>
+    </view>
+    <view class="doctor-list">
+      <view class="doctor-card" wx:for="{{doctors}}" wx:key="id" bindtap="onDoctorTap" data-id="{{item.id}}">
+        <view class="doctor-avatar">
+          <text>{{item.name ? item.name[0] : '医'}}</text>
+        </view>
+        <view class="doctor-info">
+          <view class="doctor-name-row">
+            <text class="doctor-name">{{item.name}}</text>
+            <text class="doctor-title">{{item.title || '主治医师'}}</text>
+          </view>
+          <text class="doctor-specialty">{{item.specialty || '擅长常见疾病诊疗'}}</text>
+        </view>
+        <view class="book-btn">
+          <text>预约</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 无医生 -->
+  <view class="empty-state" wx:if="{{!loading && doctors.length === 0}}">
+    <text class="empty-icon">👨‍⚕️</text>
+    <text class="empty-text">暂无医生信息</text>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>

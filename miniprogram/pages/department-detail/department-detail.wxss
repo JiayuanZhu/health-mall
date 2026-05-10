@@ -1,0 +1,153 @@
+.dept-detail-page {
+  min-height: 100vh;
+}
+
+/* 科室头部 */
+.dept-header {
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.dept-header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 280rpx;
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.dept-header-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 40rpx;
+}
+
+.dept-icon-large {
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 60rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.dept-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12rpx;
+}
+
+.dept-description {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 医生列表 */
+.doctors-section {
+  padding: 0 24rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-top: 10rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.doctor-count {
+  font-size: 24rpx;
+  color: #9ca3af;
+}
+
+.doctor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.doctor-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.doctor-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.doctor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doctor-name-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.doctor-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-right: 12rpx;
+}
+
+.doctor-title {
+  font-size: 22rpx;
+  color: #0ea5e9;
+  background: #e0f2fe;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.doctor-specialty {
+  font-size: 24rpx;
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-btn {
+  padding: 14rpx 28rpx;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: #ffffff;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-left: 12rpx;
+}

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/products/products",
+    "pages/departments/departments",
+    "pages/profile/profile",
+    "pages/product-detail/product-detail",
+    "pages/department-detail/department-detail",
+    "pages/doctor-detail/doctor-detail",
+    "pages/cart/cart",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/orders/orders",
+    "pages/appointments/appointments"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0ea5e9",
+    "navigationBarTitleText": "健康商城",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#0ea5e9",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/products/products",
+        "text": "药品",
+        "iconPath": "images/medicine.png",
+        "selectedIconPath": "images/medicine-active.png"
+      },
+      {
+        "pagePath": "pages/departments/departments",
+        "text": "挂号",
+        "iconPath": "images/hospital.png",
+        "selectedIconPath": "images/hospital-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

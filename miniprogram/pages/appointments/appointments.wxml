@@ -1,0 +1,74 @@
+<view class="appointments-page">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">📋 我的预约</text>
+  </view>
+
+  <!-- 预约列表 -->
+  <view class="appointment-list" wx:if="{{appointments.length > 0}}">
+    <view class="appointment-card" wx:for="{{appointments}}" wx:key="id">
+      <view class="appointment-header">
+        <view class="appointment-status">
+          <view class="status-badge badge-{{item.status === 'pending' ? 'pending' : item.status === 'confirmed' ? 'confirmed' : item.status === 'completed' ? 'completed' : item.status === 'cancelled' ? 'cancelled' : 'pending'}}">
+            <text>{{item.status === 'pending' ? '待确认' : item.status === 'confirmed' ? '已确认' : item.status === 'completed' ? '已完成' : item.status === 'cancelled' ? '已取消' : item.status}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="appointment-body">
+        <view class="appointment-doctor">
+          <view class="doctor-avatar-sm">
+            <text>{{item.doctor_name ? item.doctor_name[0] : '医'}}</text>
+          </view>
+          <view class="doctor-info-sm">
+            <text class="doctor-name-sm">{{item.doctor_name || '医生'}}</text>
+            <text class="doctor-dept-sm">{{item.department_name || ''}}</text>
+          </view>
+        </view>
+
+        <view class="appointment-details">
+          <view class="detail-row">
+            <text class="detail-icon">📅</text>
+            <text class="detail-text">{{item.appointment_date}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-icon">⏰</text>
+            <text class="detail-text">{{item.time_slot}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-icon">👤</text>
+            <text class="detail-text">{{item.patient_name}}</text>
+          </view>
+          <view class="detail-row" wx:if="{{item.patient_phone}}">
+            <text class="detail-icon">📱</text>
+            <text class="detail-text">{{item.patient_phone}}</text>
+          </view>
+          <view class="detail-row" wx:if="{{item.symptoms}}">
+            <text class="detail-icon">📝</text>
+            <text class="detail-text symptoms">{{item.symptoms}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="appointment-footer" wx:if="{{item.status === 'pending' || item.status === 'confirmed'}}">
+        <view class="cancel-btn" catchtap="onCancelAppointment" data-appointment="{{item}}">
+          <text>取消预约</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && appointments.length === 0}}">
+    <text class="empty-icon">📋</text>
+    <text class="empty-text">暂无预约</text>
+    <navigator url="/pages/departments/departments" open-type="switchTab" class="empty-btn">
+      <text>去挂号</text>
+    </navigator>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>

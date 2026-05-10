@@ -18,6 +18,8 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// 同时提供 client/public 下的静态资源（图片等），方便小程序直接访问
+app.use('/images', express.static(path.join(__dirname, '..', 'client', 'public', 'images')));
 
 // Initialize database
 initDB();

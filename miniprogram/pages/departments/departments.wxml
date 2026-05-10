@@ -1,0 +1,41 @@
+<view class="departments-page">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">选择科室</text>
+    <text class="page-subtitle">选择需要就诊的科室进行预约挂号</text>
+  </view>
+
+  <!-- 科室列表 -->
+  <view class="dept-list" wx:if="{{departments.length > 0}}">
+    <view class="dept-card" wx:for="{{departments}}" wx:key="id" bindtap="onDepartmentTap" data-id="{{item.id}}">
+      <view class="dept-card-left">
+        <view class="dept-icon-wrap {{item.is_hot ? 'hot' : ''}}">
+          <text class="dept-icon">{{item.icon || '🏥'}}</text>
+        </view>
+      </view>
+      <view class="dept-card-center">
+        <view class="dept-name-row">
+          <text class="dept-name">{{item.name}}</text>
+          <view class="hot-badge" wx:if="{{item.is_hot}}">
+            <text>🔥 热门</text>
+          </view>
+        </view>
+        <text class="dept-desc">{{item.description || '专业医疗团队为您服务'}}</text>
+      </view>
+      <view class="dept-card-right">
+        <text class="dept-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && departments.length === 0}}">
+    <text class="empty-icon">🏥</text>
+    <text class="empty-text">暂无科室信息</text>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>
