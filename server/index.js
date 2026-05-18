@@ -39,6 +39,13 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: '健康医疗商城API运行正常' });
 });
 
+// 如果存在前端构建产物，也支持由后端直接托管静态页面。
+const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
+app.use(express.static(clientDistPath));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientDistPath, 'index.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`健康医疗商城后端服务运行在 http://0.0.0.0:${PORT}`);
 });

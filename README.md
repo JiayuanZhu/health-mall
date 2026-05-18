@@ -43,14 +43,22 @@
 ```bash
 # 打包 Linux 版
 ./build-scripts/build-linux.sh
+```
 
-# 打包 Windows 版
-./build-scripts/build-windows.sh
+Windows 版需要在 Windows 环境打包，双击运行：
+
+```text
+build-scripts\build-windows.bat
 ```
 
 打包产出：
 - `health-mall-linux-x64.tar.gz` — Linux 用户解压后运行 `./start.sh`
 - `health-mall-windows-x64.zip` — Windows 用户解压后双击 `start.bat`
+
+Windows 发布包会同时启动两个服务：
+- 前端: http://localhost:5173
+- 后端 API: http://localhost:3001
+- 管理后台: http://localhost:5173/admin
 
 ### 方式二：开发者本地运行
 
@@ -84,7 +92,8 @@ npm run dev
 health-mall/
 ├── build-scripts/          # 打包脚本
 │   ├── build-linux.sh      # 打包 Linux 解压即用版
-│   └── build-windows.sh    # 打包 Windows 解压即用版
+│   ├── build-windows.bat   # Windows 一键打包入口
+│   └── build-windows.ps1   # Windows 打包主脚本
 ├── client/                 # 前端 (Vite + React)
 │   ├── public/images/      # 静态图片资源
 │   ├── src/
@@ -136,7 +145,8 @@ health-mall/
 - 数据库文件 `server/health-mall.db` 首次启动时自动创建并填充示例数据
 - 前端开发服务通过 Vite proxy 将 `/api` 请求代理到后端 3001 端口
 - 图片资源存放在 `client/public/images/`
-- 打包脚本使用 Node.js v20 LTS + better-sqlite3 prebuilt binary，确保跨平台兼容
+- Windows 包必须在 Windows 环境打包，脚本会安装 Windows 版依赖并内置便携版 Node.js
+- Windows 发布包使用 `start.bat` 同时启动后端和前端，浏览器访问 `http://localhost:5173`
 
 ## License
 
